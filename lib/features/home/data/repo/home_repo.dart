@@ -1,11 +1,11 @@
 import 'package:dio/dio.dart';
 import 'package:exercises/features/home/data/models/exercise_model.dart';
 
-class ApiRepo {
+class HomeRepo {
   final Dio dio;
   final baseUrl = "https://api.api-ninjas.com/v1/";
   final String apiKey = "J0wInoXiBwfR2dfcXRJ6cA==ruLt8yatbkZB2Yrq";
-  ApiRepo(this.dio);
+  HomeRepo(this.dio);
 
   Future<List<ExerciseModel>> getExercises({String? muscle}) async {
     try {

@@ -1,8 +1,9 @@
 import 'package:dio/dio.dart';
-import 'package:exercises/core/repo/api_repo.dart';
+import 'package:exercises/features/home/data/repo/home_repo.dart';
 import 'package:exercises/features/home/data/cubit/home_cubit.dart';
 import 'package:exercises/features/home/presentation/widgets/bottom_app_bar.dart';
 import 'package:exercises/features/home/presentation/widgets/home_view_body.dart';
+import 'package:exercises/features/workout/presentation/views/workout_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -18,7 +19,7 @@ class _HomeViewState extends State<HomeView> {
 
   final List<Widget> _pages = [
     HomeViewBody(),
-    const Center(child: Text("Workout Page", style: TextStyle(fontSize: 22))),
+    WorkOutView(),
     const Center(child: Text("Profile Page", style: TextStyle(fontSize: 22))),
   ];
 
@@ -31,7 +32,7 @@ class _HomeViewState extends State<HomeView> {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => HomeCubit(ApiRepo(Dio())),
+      create: (context) => HomeCubit(HomeRepo(Dio())),
       child: Scaffold(
         body: _pages[_selectedIndex],
         bottomNavigationBar: CustomBottomAppBar(

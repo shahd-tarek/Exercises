@@ -1,10 +1,10 @@
-import 'package:exercises/core/repo/api_repo.dart';
+import 'package:exercises/features/home/data/repo/home_repo.dart';
 import 'package:exercises/features/home/data/cubit/home_state.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class HomeCubit extends Cubit<HomeState> {
   HomeCubit(this.repo) : super(HomeInitial());
-  final ApiRepo repo;
+  final HomeRepo repo;
   Future<void> getExercises({String? muscle}) async {
     emit(HomeLoading());
     try {
