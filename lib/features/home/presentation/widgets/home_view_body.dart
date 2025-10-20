@@ -9,25 +9,12 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 class HomeViewBody extends StatelessWidget {
   const HomeViewBody({super.key});
-  String getMuscleImage(String muscle) {
-    switch (muscle.toLowerCase()) {
-      case 'biceps':
-        return 'assets/images/biceps.jpg';
-      case 'chest':
-        return 'assets/images/chest.jpg';
-      case 'legs':
-        return 'assets/images/legs.jpg';
-      default:
-        return 'assets/images/default.jpg';
-    }
-  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
       appBar: AppBar(
-        backgroundColor: Colors.white,
+        backgroundColor: kBackground,
         elevation: 0,
         title: Text(
           "Good Morning 🔥",

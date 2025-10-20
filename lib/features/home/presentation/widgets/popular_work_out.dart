@@ -26,8 +26,6 @@ class PopularWorkoutsSection extends StatelessWidget {
           ),
         ),
         const SizedBox(height: 16),
-
-        // 🔥 Horizontal ListView
         SizedBox(
           height: 200,
           child: ListView.builder(
@@ -36,7 +34,7 @@ class PopularWorkoutsSection extends StatelessWidget {
             itemBuilder: (context, index) {
               final ex = exercises[index];
               return Container(
-                width: 200,
+                width: 280,
                 margin: const EdgeInsets.only(right: 16, bottom: 8),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(16),
@@ -55,7 +53,7 @@ class PopularWorkoutsSection extends StatelessWidget {
                     children: [
                       Image.asset(
                         getMuscleImage(ex.muscle),
-                        width: 200,
+                        width: 300,
                         height: 200,
                         fit: BoxFit.cover,
                       ),
@@ -89,7 +87,7 @@ class PopularWorkoutsSection extends StatelessWidget {
                             ),
                             const SizedBox(height: 4),
                             Text(
-                              "Difficulty: ${ex.difficulty}",
+                            ex.difficulty,
                               style: Styles.textStyle16.copyWith(
                                 color: Colors.white70,
                               ),

@@ -1,4 +1,5 @@
 import 'package:exercises/core/navigation/app_router.dart';
+import 'package:exercises/core/utils/constants.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -11,6 +12,9 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp.router(
+      theme: ThemeData(
+         scaffoldBackgroundColor:kBackground
+      ),
       debugShowCheckedModeBanner: false,
       title: 'Exercises',
       routerConfig: AppRouter.router,

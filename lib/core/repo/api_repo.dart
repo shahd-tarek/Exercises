@@ -9,15 +9,15 @@ class ApiRepo {
 
   Future<List<ExerciseModel>> getExercises({String? muscle}) async {
     try {
-      final endpoint =
-          muscle == null || muscle.isEmpty
-              ? "${baseUrl}exercises"
-              : "${baseUrl}exercises?muscle=$muscle";
+      final endpoint = (muscle == null || muscle.isEmpty)
+          ? "${baseUrl}exercises"
+          : "${baseUrl}exercises?muscle=$muscle";
 
       final response = await dio.get(
         endpoint,
         options: Options(headers: {"X-Api-Key": apiKey}),
       );
+
       if (response.statusCode == 200) {
         final data = response.data as List;
         return data.map((e) => ExerciseModel.fromJson(e)).toList();
@@ -29,3 +29,4 @@ class ApiRepo {
     }
   }
 }
+
