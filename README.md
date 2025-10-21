@@ -30,7 +30,11 @@ https://github.com/user-attachments/assets/9d52317e-4b92-42e4-8915-67746831b391
 # Tech Stack
 
 Flutter – Frontend framework
+
 Bloc (Cubit) – State management
+
 Dio  – API handling
+
 Clean Architecture – Layered code structure
+
 Responsive Framework (optional) – For adaptive layout design
