@@ -3,6 +3,7 @@ import 'package:exercises/features/home/data/repo/home_repo.dart';
 import 'package:exercises/features/home/data/cubit/home_cubit.dart';
 import 'package:exercises/features/home/presentation/widgets/bottom_app_bar.dart';
 import 'package:exercises/features/home/presentation/widgets/home_view_body.dart';
+import 'package:exercises/features/profile/presentation/views/profile.dart';
 import 'package:exercises/features/workout/presentation/views/workout_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -17,11 +18,7 @@ class HomeView extends StatefulWidget {
 class _HomeViewState extends State<HomeView> {
   int _selectedIndex = 0;
 
-  final List<Widget> _pages = [
-    HomeViewBody(),
-    WorkOutView(),
-    const Center(child: Text("Profile Page", style: TextStyle(fontSize: 22))),
-  ];
+  final List<Widget> _pages = [HomeViewBody(), WorkOutView(), ProfileView()];
 
   void _onItemTapped(int index) {
     setState(() {

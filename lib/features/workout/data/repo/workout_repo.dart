@@ -7,19 +7,17 @@ class WorkoutRepo {
 
   WorkoutRepo(this.dio);
 
-  Future <List<ExerciseModel>> fetchExercisesByMuscle(String muscle) async{
-    try{
+  Future<List<ExerciseModel>> fetchExercisesByMuscle(String muscle) async {
+    try {
       final response = await dio.get(
         'https://api.api-ninjas.com/v1/exercises',
-         queryParameters: {'muscle': muscle},
+        queryParameters: {'muscle': muscle},
         options: Options(headers: {'X-Api-Key': apiKey}),
       );
       final List data = response.data;
       return data.map((e) => ExerciseModel.fromJson(e)).toList();
-    }catch(e){
-     throw Exception('Failed to load exercises: $e');
+    } catch (e) {
+      throw Exception('Failed to load exercises: $e');
     }
-
   }
-
 }

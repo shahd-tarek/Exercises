@@ -87,7 +87,7 @@ class PopularWorkoutsSection extends StatelessWidget {
                             ),
                             const SizedBox(height: 4),
                             Text(
-                            ex.difficulty,
+                              ex.difficulty,
                               style: Styles.textStyle16.copyWith(
                                 color: Colors.white70,
                               ),

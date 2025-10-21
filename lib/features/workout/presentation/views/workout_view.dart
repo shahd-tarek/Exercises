@@ -7,7 +7,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:dio/dio.dart';
 
-
 class WorkOutView extends StatelessWidget {
   const WorkOutView({super.key});
 
@@ -17,13 +16,16 @@ class WorkOutView extends StatelessWidget {
       create: (_) => WorkoutCubit(WorkoutRepo(Dio())),
       child: Scaffold(
         appBar: AppBar(
-          title:Text("Workout Search",style: Styles.textStyle20.copyWith(
-            fontWeight: FontWeight.bold,
-            color: kTextColor,
-          ),),
+          title: Text(
+            "Workout Search",
+            style: Styles.textStyle20.copyWith(
+              fontWeight: FontWeight.bold,
+              color: kTextColor,
+            ),
+          ),
           backgroundColor: kBackground,
         ),
-        body: const WorkOutBody(),
+        body: const WorkoutBody(),
       ),
     );
   }

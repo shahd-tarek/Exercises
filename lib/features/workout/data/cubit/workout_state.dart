@@ -1,9 +1,8 @@
 import 'package:equatable/equatable.dart';
 import 'package:exercises/features/home/data/models/exercise_model.dart';
 
-
 abstract class WorkoutState extends Equatable {
-   @override
+  @override
   List<Object?> get props => [];
 }
 

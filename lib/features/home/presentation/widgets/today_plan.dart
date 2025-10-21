@@ -39,12 +39,12 @@ class TodayPlanList extends StatelessWidget {
                       borderRadius: BorderRadius.circular(8),
                       child: Image.asset(
                         getMuscleImage(ex.muscle),
-                        width: 120, 
+                        width: 120,
                         height: 120,
                         fit: BoxFit.cover,
                       ),
                     ),
-                    const SizedBox(width: 16), 
+                    const SizedBox(width: 16),
 
                     Expanded(
                       child: Column(
@@ -57,7 +57,7 @@ class TodayPlanList extends StatelessWidget {
                               fontWeight: FontWeight.bold,
                             ),
                           ),
-                          const SizedBox(height: 8), 
+                          const SizedBox(height: 8),
                           Text(
                             ex.difficulty,
                             style: const TextStyle(color: Colors.grey),
@@ -65,7 +65,6 @@ class TodayPlanList extends StatelessWidget {
                         ],
                       ),
                     ),
-
 
                     const Icon(
                       Icons.play_circle_fill,

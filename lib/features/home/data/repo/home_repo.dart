@@ -9,9 +9,10 @@ class HomeRepo {
 
   Future<List<ExerciseModel>> getExercises({String? muscle}) async {
     try {
-      final endpoint = (muscle == null || muscle.isEmpty)
-          ? "${baseUrl}exercises"
-          : "${baseUrl}exercises?muscle=$muscle";
+      final endpoint =
+          (muscle == null || muscle.isEmpty)
+              ? "${baseUrl}exercises"
+              : "${baseUrl}exercises?muscle=$muscle";
 
       final response = await dio.get(
         endpoint,
@@ -29,4 +30,3 @@ class HomeRepo {
     }
   }
 }
-

@@ -12,6 +12,9 @@ class HomeViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      context.read<HomeCubit>().getExercises();
+    });
     return Scaffold(
       appBar: AppBar(
         backgroundColor: kBackground,
@@ -61,15 +64,9 @@ class HomeViewBody extends StatelessWidget {
                     ),
                   ],
                 );
+              } else {
+                return const Center(child: CircularProgressIndicator());
               }
-              return Center(
-                child: ElevatedButton(
-                  onPressed: () {
-                    context.read<HomeCubit>().getExercises();
-                  },
-                  child: const Text("Load Exercises"),
-                ),
-              );
             },
           ),
         ),
